@@ -1,14 +1,16 @@
 import React from 'react';
-import { View } from '../../components/common';
+import { Layout } from '../../components/common';
 import { StyleSheet } from 'react-native';
 import SearchHome from './SearchHome';
+import { IconButton } from '../../components/buttons';
 
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <SearchHome/>
-    </View>
+    <Layout style={styles.container}>
+      <SearchHome />
+      <IconButton />
+    </Layout>
   )
 }
 

@@ -2,7 +2,7 @@ export interface AppTheme {
   theme: 'light' | 'dark',
   value: {
     primary?: string;
-    sencdary?: string;
+    secondary?: string;
     text?: string;
     success?: string;
     warning?: string;

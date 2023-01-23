@@ -4,7 +4,7 @@ export const lightTheme: AppTheme = {
   theme: 'light',
   value: {
     primary: '#69A0F3',
-    sencdary: 'rgba(105, 160, 243, 0.83)',
+    secondary: 'rgba(105, 160, 243, 0.83)',
     text: '#000000',
     success: '#339900',
     warning: '#FFCD06',
@@ -19,7 +19,7 @@ export const darkTheme: AppTheme = {
   theme: 'dark',
   value: {
     primary: '#69A0F3',
-    sencdary: 'rgba(105, 160, 243, 0.83)',
+    secondary: 'rgba(105, 160, 243, 0.83)',
     text: '#ECECEC',
     success: '#339900',
     warning: '#FFCD06',
