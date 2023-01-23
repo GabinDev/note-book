@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": "@react-native-community",
+  "rules": {
+    "@typescript-eslint/no-unused-vars" : "off",
+    "semi" :"off",
+    "prettier/prettier" : "off",
+    "comma-dangle" : "off",
+    "eol-last" : "off",
+    "react-native/no-inline-styles" : "off",
+    "react/no-unstable-nested-components" : "off"
+  }
+}
