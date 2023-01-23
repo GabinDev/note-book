@@ -11,16 +11,14 @@ type IconButtonProps = ViewProps & TouchableNativeFeedbackProps & {
   icon: ReactNode
 }
 
-const IconButton: FC<IconButtonProps> = ({ icon, ...props }) => {
+const IconButton: FC<IconButtonProps> = ({ icon, style, ...props }) => {
   return (
     <View
-      style={[
-        styles.rounded,
-        {
-          // @ts-ignore
-          ...props.style
-        }
-      ]}
+      style={{
+        ...styles.rounded,
+        // @ts-ignore
+        ...style
+      }}
       {...props}
     >
       <TouchableNativeFeedback {...props}>
