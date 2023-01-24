@@ -22,7 +22,9 @@ const IconButton: FC<IconButtonProps> = ({ icon, style, ...props }) => {
       {...props}
     >
       <TouchableNativeFeedback {...props}>
-        {icon}
+        <View style={styles.container}>
+          {icon}
+        </View>
       </TouchableNativeFeedback>
     </View>
   )
@@ -33,8 +35,13 @@ export default memo<IconButtonProps>(IconButton)
 const styles = StyleSheet.create({
   rounded: {
     overflow: 'hidden',
+    borderRadius: Width,
+  },
+  container : {
+    width : '100%',
+    height : '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: Width,
+    backgroundColor : 'transparent'
   }
 })
