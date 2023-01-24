@@ -32,6 +32,7 @@ const ListDescriptions: FC<ViewProps> = ({ ...props }) => {
     <View style={styles.container} {...props}>
       <Animated.FlatList
         horizontal
+        showsHorizontalScrollIndicator={false}
         data={data}
         renderItem={renderItem}
       />

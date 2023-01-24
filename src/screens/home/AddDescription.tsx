@@ -1,4 +1,8 @@
-import React, { FC, memo } from 'react';
+import React, {
+  FC,
+  memo,
+  useCallback
+} from 'react';
 import {
   StyleSheet,
   ViewProps
@@ -8,12 +12,27 @@ import { Height, Width } from '../../utils/constants';
 import useTheme from '../../hooks/useTheme';
 import AddDescriptionButton from '../../components/animatable/AddDescriptionButton';
 import { useAtom } from 'jotai';
-import { textInput } from '../../store/description';
+import { descriptions, textInput } from '../../store/description';
 
 
 const AddDescription: FC<ViewProps> = ({ style, ...props }) => {
+
+  const [, setDescriptions] = useAtom(descriptions);
   const [text, setText] = useAtom(textInput);
+
   const { value } = useTheme();
+
+  const handleAdd = useCallback(() => {
+    setDescriptions(d => [
+      ...d,
+      {
+        id: Date.now(),
+        text,
+        color: value.text
+      }
+    ]);
+    setText('');
+  }, [value]);
 
   return (
     <View
@@ -29,7 +48,7 @@ const AddDescription: FC<ViewProps> = ({ style, ...props }) => {
         onChangeText={setText}
         style={styles.input}
       />
-      <AddDescriptionButton />
+      <AddDescriptionButton onPress={handleAdd} />
     </View>
   )
 }

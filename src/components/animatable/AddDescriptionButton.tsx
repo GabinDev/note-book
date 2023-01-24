@@ -25,16 +25,18 @@ const AddDescriptionButton: FC<AddDescriptionButtonProps> = ({ onPress }) => {
   const scale = useSharedValue(0);
 
   const uas = useAnimatedStyle(() => ({
-    transform: [{ scale: scale.value }]
+    transform: [{ scale: scale.value }],
   }));
 
   useEffect(() => {
     scale.value = withTiming(text === '' ? 0 : 1);
   }, [text]);
 
-
   return (
-    <Animated.View style={[uas]} >
+    <Animated.View
+      style={[uas]}
+      pointerEvents={text === '' ? 'none' : 'auto'}
+    >
       <IconButton
         onPress={onPress}
         style={styles.button}
