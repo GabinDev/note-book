@@ -31,7 +31,7 @@ const AddDescription: FC<ViewProps> = ({ style, ...props }) => {
       }
     ]);
     setText('');
-  }, [value]);
+  }, [text]);
 
   return (
     <View

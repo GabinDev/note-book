@@ -28,7 +28,7 @@ const Chips: FC<ChipsProps> = ({ id, text, color, onPress, ...props }) => {
             style={[
               uas,
               styles.container,
-              { backgroundColor: color }
+              { backgroundColor: color ?? value.variant1 }
             ]}
             {...props}
           >
