@@ -60,9 +60,8 @@ export default SearchHome;
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    marginTop: Height / 25,
     flexDirection: 'row',
+    marginTop: Height / 25,
     alignItems: 'center',
     columnGap: Width / 20
   },
