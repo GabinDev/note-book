@@ -3,6 +3,7 @@ import { Layout } from '../../components/common';
 import { StyleSheet } from 'react-native';
 import SearchHome from './SearchHome';
 import ListDescriptions from './ListDescriptions';
+import AddDescription from './AddDescription';
 
 
 const HomeScreen = () => {
@@ -10,6 +11,7 @@ const HomeScreen = () => {
     <Layout style={styles.container}>
       <SearchHome />
       <ListDescriptions />
+      <AddDescription />
     </Layout>
   )
 }

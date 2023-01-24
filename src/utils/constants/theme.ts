@@ -10,6 +10,7 @@ export const lightTheme: AppTheme = {
     warning: '#FFCD06',
     danger: '#CC3300',
     variant1 : 'rgba(0,0,0,.05)',
+    variant2 : 'rgba(0,0,0,.025)',
     background: 'white',
     placeholder : 'rgba(0, 0, 0, .5)'
   }
@@ -26,6 +27,7 @@ export const darkTheme: AppTheme = {
     warning: '#FFCD06',
     danger: '#CC3300',
     variant1 : 'rgba(255,255,255,.15)',
+    variant2 : 'rgba(255,255,255,.06)',
     background: '#000000',
     placeholder : 'rgba(255, 255, 255, .7)'
   }

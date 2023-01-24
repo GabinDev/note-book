@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import {
   StyleSheet,
   TouchableNativeFeedback,
@@ -10,8 +10,12 @@ import type { Description } from '../../utils/types';
 import { Height, Width } from '../../utils/constants';
 import useTheme from '../../hooks/useTheme';
 
+type ChipsProps = Description & {
+  onPress?: () => void
+}
 
-const Chips: FC<Description> = ({ id, text, color, ...props }) => {
+
+const Chips: FC<ChipsProps> = ({ id, text, color, onPress, ...props }) => {
   const { value } = useTheme();
 
   const uas = useAnimatedStyle(() => ({
@@ -21,7 +25,7 @@ const Chips: FC<Description> = ({ id, text, color, ...props }) => {
   return (
     <View style={styles.row}>
       <View style={styles.rounded}>
-        <TouchableNativeFeedback>
+        <TouchableNativeFeedback onPress={onPress}>
           <Animated.View
             style={[
               uas,
@@ -38,7 +42,7 @@ const Chips: FC<Description> = ({ id, text, color, ...props }) => {
   )
 }
 
-export default Chips
+export default memo<ChipsProps>(Chips);
 
 const styles = StyleSheet.create({
   row: {

@@ -11,7 +11,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { Height } from '../../utils/constants';
 import { useAtom } from 'jotai';
-import { textFocusedHeader } from '../../store/input';
+import { textFocused } from '../../store/newTask';
 import { lightTheme } from '../../utils/constants/theme';
 
 
@@ -19,14 +19,14 @@ type DividerProps = {}
 
 const Divider: FC<DividerProps> = ({ }) => {
   const width = useSharedValue(0);
-  const [focused] = useAtom(textFocusedHeader);
+  const [focused] = useAtom(textFocused);
 
   const uas = useAnimatedStyle(() => ({
     width: `${width.value}%`
   }));
 
   useEffect(() => {
-    width.value = withSpring(focused ? 90 : 0, { damping: 5 });
+    width.value = withSpring(focused ? 90 : 0, { damping: 10 });
   }, [focused]);
 
   return (
