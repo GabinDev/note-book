@@ -8,17 +8,16 @@ import useTheme from '../../hooks/useTheme';
 import Divider from '../../components/animatable/Divider';
 import { useAtom } from 'jotai';
 import {
-  textFocused,
-  textInput
-} from '../../store/header/input';
+  textFocusedHeader,
+  textInputHeader
+} from '../../store/input';
 
 type SearchHomeProps = ViewProps & {}
 
 const SearchHome: FC<SearchHomeProps> = ({ ...props }) => {
   const { value } = useTheme();
-  const [text, setText] = useAtom(textInput);
-  const [, setTextFocused] = useAtom(textFocused);
-
+  const [text, setText] = useAtom(textInputHeader);
+  const [, setTextFocused] = useAtom(textFocusedHeader);
 
   return (
     <View style={styles.container}  {...props}>
