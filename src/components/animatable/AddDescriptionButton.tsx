@@ -14,6 +14,7 @@ import { Width } from '../../utils/constants';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import { useAtom } from 'jotai';
 import { textInput } from '../../store/description';
+import useTheme from '../../hooks/useTheme';
 
 
 type AddDescriptionButtonProps = {
@@ -21,6 +22,7 @@ type AddDescriptionButtonProps = {
 }
 
 const AddDescriptionButton: FC<AddDescriptionButtonProps> = ({ onPress }) => {
+  const { value } = useTheme();
   const [text] = useAtom(textInput);
   const scale = useSharedValue(0);
 
@@ -43,6 +45,7 @@ const AddDescriptionButton: FC<AddDescriptionButtonProps> = ({ onPress }) => {
         icon={
           <MaterialIcon
             name="playlist-add"
+            color={value.text}
             size={Width / 20}
           />
         }

@@ -27,8 +27,7 @@ const AddDescription: FC<ViewProps> = ({ style, ...props }) => {
       ...d,
       {
         id: Date.now(),
-        text,
-        color: value.text
+        text
       }
     ]);
     setText('');

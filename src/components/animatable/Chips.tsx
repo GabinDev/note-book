@@ -18,9 +18,7 @@ type ChipsProps = Description & {
 const Chips: FC<ChipsProps> = ({ id, text, color, onPress, ...props }) => {
   const { value } = useTheme();
 
-  const uas = useAnimatedStyle(() => ({
-    backgroundColor: color,
-  }))
+  const uas = useAnimatedStyle(() => ({}))
 
   return (
     <View style={styles.row}>
@@ -29,11 +27,12 @@ const Chips: FC<ChipsProps> = ({ id, text, color, onPress, ...props }) => {
           <Animated.View
             style={[
               uas,
-              styles.container
+              styles.container,
+              { backgroundColor: color }
             ]}
             {...props}
           >
-            <Text style={{ color: value.background, ...styles.text }}>{text}</Text>
+            <Text style={{ ...styles.text }}>{text}</Text>
           </Animated.View>
         </TouchableNativeFeedback>
       </View>
