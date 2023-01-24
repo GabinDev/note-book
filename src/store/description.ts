@@ -2,7 +2,9 @@ import { atom } from 'jotai';
 import type { Description } from '../utils/types';
 import { lightTheme } from '../utils/constants/theme';
 
-const descriptions = atom<Description[]>([
+export const textInput = atom<string>('');
+
+export const descriptions = atom<Description[]>([
   {
     id: 1,
     text: 'Low',
@@ -14,5 +16,3 @@ const descriptions = atom<Description[]>([
     color: lightTheme.value.warning
   },
 ]);
-
-export default descriptions;

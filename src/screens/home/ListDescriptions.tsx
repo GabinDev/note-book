@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { useAtom } from 'jotai';
-import descriptions from '../../store/descriptions';
+import { descriptions } from '../../store/description';
 import type { Description } from '../../utils/types';
 import Chips from '../../components/animatable/Chips';
 import { Height, Width } from '../../utils/constants';
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   separator: {
     width: Width / 20,
-    height : Height / 30,
-    backgroundColor :'red'
+    height: Height / 30,
+    backgroundColor: 'red'
   }
 })

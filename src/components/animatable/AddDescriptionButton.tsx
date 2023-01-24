@@ -1,24 +1,37 @@
-import React, { FC } from 'react';
+import React, {
+  FC,
+  memo,
+  useEffect
+} from 'react';
 import { StyleSheet } from 'react-native';
 import Animated, {
   useAnimatedStyle,
-  useSharedValue
+  useSharedValue,
+  withTiming
 } from 'react-native-reanimated';
 import { IconButton } from '../buttons';
 import { Width } from '../../utils/constants';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import { useAtom } from 'jotai';
+import { textInput } from '../../store/description';
 
 
 type AddDescriptionButtonProps = {
   onPress?: () => void
 }
 
-const AddDescriptionButton: FC<AddDescriptionButtonProps> = ({ onPress, ...props }) => {
-  const scale = useSharedValue(1);
+const AddDescriptionButton: FC<AddDescriptionButtonProps> = ({ onPress }) => {
+  const [text] = useAtom(textInput);
+  const scale = useSharedValue(0);
 
   const uas = useAnimatedStyle(() => ({
-
+    transform: [{ scale: scale.value }]
   }));
+
+  useEffect(() => {
+    scale.value = withTiming(text === '' ? 0 : 1);
+  }, [text]);
+
 
   return (
     <Animated.View style={[uas]} >
@@ -36,7 +49,7 @@ const AddDescriptionButton: FC<AddDescriptionButtonProps> = ({ onPress, ...props
   )
 }
 
-export default AddDescriptionButton
+export default memo<AddDescriptionButtonProps>(AddDescriptionButton);
 
 const styles = StyleSheet.create({
   button: {

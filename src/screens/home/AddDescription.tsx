@@ -6,11 +6,13 @@ import {
 import { TextInput, View } from '../../components/common';
 import { Height, Width } from '../../utils/constants';
 import useTheme from '../../hooks/useTheme';
-import { IconButton } from '../../components/buttons';
 import AddDescriptionButton from '../../components/animatable/AddDescriptionButton';
+import { useAtom } from 'jotai';
+import { textInput } from '../../store/description';
 
 
 const AddDescription: FC<ViewProps> = ({ style, ...props }) => {
+  const [text, setText] = useAtom(textInput);
   const { value } = useTheme();
 
   return (
@@ -23,9 +25,11 @@ const AddDescription: FC<ViewProps> = ({ style, ...props }) => {
     >
       <TextInput
         placeholder="Ajouter une description..."
+        value={text}
+        onChangeText={setText}
         style={styles.input}
       />
-      <AddDescriptionButton  />
+      <AddDescriptionButton />
     </View>
   )
 }
