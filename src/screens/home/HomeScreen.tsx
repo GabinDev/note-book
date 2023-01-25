@@ -3,7 +3,7 @@ import { Layout } from '../../components/common';
 import { StyleSheet } from 'react-native';
 import SearchHome from './SearchHome';
 import ListDescriptions from './ListPriorities';
-import AddDescription from './AddDescription';
+import ButtonAddTask from '../../components/animatable/ButtonAddTask';
 
 
 const HomeScreen = () => {
@@ -11,6 +11,7 @@ const HomeScreen = () => {
     <Layout style={styles.container}>
       <SearchHome />
       <ListDescriptions />
+      <ButtonAddTask />
     </Layout>
   )
 }
