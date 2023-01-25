@@ -10,5 +10,6 @@ export interface Task {
   title: string;
   description?: string;
   color?: string;
+  date?: Date,
   priority?: Priority
 }

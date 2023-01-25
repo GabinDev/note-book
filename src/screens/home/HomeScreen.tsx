@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import SearchHome from './SearchHome';
 import ListDescriptions from './ListPriorities';
 import ButtonAddTask from '../../components/animatable/ButtonAddTask';
+import ListTasks from './ListTasks';
 
 
 const HomeScreen = () => {
@@ -12,6 +13,7 @@ const HomeScreen = () => {
       <SearchHome />
       <ListDescriptions />
       <ButtonAddTask />
+      <ListTasks />
     </Layout>
   )
 }
