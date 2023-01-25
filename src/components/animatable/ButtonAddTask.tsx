@@ -16,7 +16,7 @@ import { tasks } from '../../store/tasks';
 const ButtonAddTask: FC<ViewProps> = ({ ...props }) => {
   const { value } = useTheme();
 
-  const [list, setList] = useAtom(tasks);
+  const [, setTasks] = useAtom(tasks);
 
   return (
     <Animated.View {...props}>
