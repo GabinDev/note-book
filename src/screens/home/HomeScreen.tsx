@@ -11,7 +11,6 @@ const HomeScreen = () => {
     <Layout style={styles.container}>
       <SearchHome />
       <ListDescriptions />
-      <AddDescription />
     </Layout>
   )
 }

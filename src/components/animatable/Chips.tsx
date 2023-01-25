@@ -32,7 +32,7 @@ const Chips: FC<ChipsProps> = ({ id, text, color, onPress, ...props }) => {
             ]}
             {...props}
           >
-            <Text style={{ ...styles.text }}>{text}</Text>
+            <Text style={{ ...styles.text, color: value.background }}>{text}</Text>
           </Animated.View>
         </TouchableNativeFeedback>
       </View>

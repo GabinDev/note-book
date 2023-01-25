@@ -1,14 +1,20 @@
-import React, { FC, memo } from 'react';
+import React, {
+  FC,
+  forwardRef,
+  memo
+} from 'react';
 import {
   TextInputProps,
   TextInput as RNTextInput
 } from 'react-native';
 import useTheme from '../../hooks/useTheme';
 
-const Text: FC<TextInputProps> = ({ style, ...props }) => {
+const TextInput: FC<TextInputProps> = forwardRef(({ style, ...props }, ref) => {
   const { value } = useTheme();
   return (
     <RNTextInput
+      // @ts-ignore
+      ref={ref}
       cursorColor={value.text}
       placeholderTextColor={value.placeholder}
       style={[
@@ -22,6 +28,6 @@ const Text: FC<TextInputProps> = ({ style, ...props }) => {
       {...props}
     />
   )
-}
+})
 
-export default memo<TextInputProps>(Text);
+export default memo<TextInputProps>(TextInput);

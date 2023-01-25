@@ -26,7 +26,7 @@ const Divider: FC<DividerProps> = ({ }) => {
   }));
 
   useEffect(() => {
-    width.value = withSpring(focused ? 90 : 0, { damping: 10 });
+    width.value = withSpring(focused ? 100 : 0, { damping: 10 });
   }, [focused]);
 
   return (

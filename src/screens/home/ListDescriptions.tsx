@@ -10,15 +10,12 @@ import {
   View
 } from 'react-native';
 import Animated from 'react-native-reanimated';
-import { useAtom } from 'jotai';
-import { descriptions } from '../../store/description';
 import type { Description } from '../../utils/types';
 import Chips from '../../components/animatable/Chips';
-import { Height, Width } from '../../utils/constants';
+import { DESCRIPTIONS, Height, Width } from '../../utils/constants';
 
 
 const ListDescriptions: FC<ViewProps> = ({ ...props }) => {
-  const [data] = useAtom(descriptions);
 
   const renderItem = useMemo(() => ({ item }: ListRenderItemInfo<Description>) => {
     return (
@@ -33,7 +30,7 @@ const ListDescriptions: FC<ViewProps> = ({ ...props }) => {
       <Animated.FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
-        data={data}
+        data={DESCRIPTIONS}
         renderItem={renderItem}
       />
     </View>
