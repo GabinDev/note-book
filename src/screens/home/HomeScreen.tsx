@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout } from '../../components/common';
 import { StyleSheet } from 'react-native';
 import SearchHome from './SearchHome';
-import ListDescriptions from './ListDescriptions';
+import ListDescriptions from './ListPriorities';
 import AddDescription from './AddDescription';
 
 

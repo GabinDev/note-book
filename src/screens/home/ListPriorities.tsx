@@ -10,20 +10,29 @@ import {
   View
 } from 'react-native';
 import Animated from 'react-native-reanimated';
-import type { Description } from '../../utils/types';
+import type { Priority } from '../../utils/types';
 import Chips from '../../components/animatable/Chips';
-import { DESCRIPTIONS, Height, Width } from '../../utils/constants';
+import {
+  DESCRIPTIONS,
+  Height,
+  Width
+} from '../../utils/constants';
+import { useAtom } from 'jotai';
+import { selected } from '../../store/priorites';
 
 
-const ListDescriptions: FC<ViewProps> = ({ ...props }) => {
+const ListPriorities: FC<ViewProps> = ({ ...props }) => {
+  const [value, setValue] = useAtom(selected);
 
-  const renderItem = useMemo(() => ({ item }: ListRenderItemInfo<Description>) => {
+  const renderItem = useMemo(() => ({ item }: ListRenderItemInfo<Priority>) => {
     return (
       <Chips
         {...item}
+        selected={value?.id === item.id}
+        onPress={() => setValue(item)}
       />
     )
-  }, []);
+  }, [value]);
 
   return (
     <View style={styles.container} {...props}>
@@ -37,7 +46,7 @@ const ListDescriptions: FC<ViewProps> = ({ ...props }) => {
   )
 }
 
-export default memo<ViewProps>(ListDescriptions);
+export default memo<ViewProps>(ListPriorities);
 
 const styles = StyleSheet.create({
   container: {

@@ -8,6 +8,7 @@ import useTheme from '../../hooks/useTheme';
 import Divider from '../../components/animatable/Divider';
 import InputTextArea from '../../components/header/InputTextArea';
 import Animated, { Easing, Layout } from 'react-native-reanimated';
+import ButtonAddTask from '../../components/animatable/ButtonAddTask';
 
 type SearchHomeProps = ViewProps & {}
 const AnimatedView = Animated.createAnimatedComponent(View);
@@ -33,20 +34,7 @@ const SearchHome: FC<SearchHomeProps> = ({ ...props }) => {
         </View>
         <Divider />
       </AnimatedView>
-      <IconButton
-        style={{
-          ...styles.button,
-          backgroundColor: value.primary
-        }}
-        icon={
-          <Ionicon
-            name="add"
-            size={Width / 12}
-            style={{ marginLeft: 5 }}
-            color={value.background}
-          />
-        }
-      />
+      <ButtonAddTask />
     </View >
   )
 }
@@ -78,11 +66,5 @@ const styles = StyleSheet.create({
     fontSize: Width / 20,
     backgroundColor: 'transparent',
     paddingHorizontal: Width / 25,
-  },
-  button: {
-    width: Width / 8,
-    height: Width / 8,
-    margin: 0,
-    padding: 0
   }
 })
