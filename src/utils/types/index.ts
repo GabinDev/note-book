@@ -3,3 +3,12 @@ export interface Priority {
   text: string;
   color?: string;
 }
+
+
+export interface Task {
+  id: number;
+  title: string;
+  description?: string;
+  color?: string;
+  priority?: Priority
+}

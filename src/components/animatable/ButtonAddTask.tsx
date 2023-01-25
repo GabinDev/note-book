@@ -5,10 +5,18 @@ import Ionicon from 'react-native-vector-icons/Ionicons';
 import { IconButton } from '../buttons';
 import Animated from 'react-native-reanimated';
 import useTheme from '../../hooks/useTheme';
+import { atom, useAtom } from 'jotai';
+import { tasks } from '../../store/tasks';
+
+// const validation = atom(
+//   (get)=>get(description)
+// )
 
 
 const ButtonAddTask: FC<ViewProps> = ({ ...props }) => {
   const { value } = useTheme();
+
+  const [list, setList] = useAtom(tasks);
 
   return (
     <Animated.View {...props}>

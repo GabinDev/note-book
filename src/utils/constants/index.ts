@@ -1,11 +1,11 @@
 import { Dimensions } from 'react-native';
-import type { Description } from '../types';
+import type { Priority } from '../types';
 import { lightTheme } from './theme';
 
 export const Width = Dimensions.get('window').width;
 export const Height = Dimensions.get('window').height;
 
-export const DESCRIPTIONS: Description[] = [
+export const PRIORITIES: Priority[] = [
   {
     id: 1,
     text: 'Priorité',

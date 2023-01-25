@@ -13,8 +13,8 @@ import Animated from 'react-native-reanimated';
 import type { Priority } from '../../utils/types';
 import Chips from '../../components/animatable/Chips';
 import {
-  DESCRIPTIONS,
   Height,
+  PRIORITIES,
   Width
 } from '../../utils/constants';
 import { useAtom } from 'jotai';
@@ -39,7 +39,7 @@ const ListPriorities: FC<ViewProps> = ({ ...props }) => {
       <Animated.FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
-        data={DESCRIPTIONS}
+        data={PRIORITIES}
         renderItem={renderItem}
       />
     </View>
