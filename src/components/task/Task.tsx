@@ -8,6 +8,7 @@ import { Text, View } from '../common';
 import { Height, Width } from '../../utils/constants';
 import useTheme from '../../hooks/useTheme';
 import moment from 'moment';
+import AnimatedTask from './AnimatedTask';
 
 interface TaskProps {
   task: Task
@@ -20,18 +21,20 @@ const Task: FC<TaskProps> = ({ task }) => {
   const { value } = useTheme();
 
   return (
-    <View
-      style={{
-        backgroundColor: value.variant1,
-        ...styles.container
-      }}
-    >
-      <View style={{ backgroundColor: 'transparent' }}>
-        <Text style={styles.title}>{task.title}</Text>
-        <Text style={styles.description}>{task.description}</Text>
+    <AnimatedTask>
+      <View
+        style={{
+          backgroundColor: value.variant1,
+          ...styles.container
+        }}
+      >
+        <View style={{ backgroundColor: 'transparent' }}>
+          <Text style={styles.title}>{task.title}</Text>
+          <Text style={styles.description}>{task.description}</Text>
+        </View>
+        <Text style={styles.date}>11 Janvier, 2023</Text>
       </View>
-      <Text style={styles.date}>11 Janvier, 2023</Text>
-    </View>
+    </AnimatedTask>
   )
 }
 
@@ -49,11 +52,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Raleway-ExtraBold',
     fontSize: Width / 25,
   },
-  date : {
+  date: {
     fontFamily: 'Raleway-Regular',
     fontSize: Width / 40,
     marginTop: Height / 100,
-    opacity : 0.7
+    opacity: 0.7
   },
   description: {
     marginTop: Height / 190,
